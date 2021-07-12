@@ -11,9 +11,9 @@ Vue.component("detail", {
             <a :href="api_url">{{api_url}}</a>
          </p>
          <h2>National</h2>
-         <card-list :carddata="cm"></card-list>
+         <card-list :carddata="cm" :url_base="api_url + '/cm'" :loa="is_px"></card-list>
          <h2>Subnational</h2>
-         <card-list :carddata="pgm"></card-list>
+         <card-list :carddata="pgm" :url_base="api_url + '/pgm'" :loa="is_px"></card-list>
       </div>
    `,
    created(){
@@ -31,6 +31,9 @@ Vue.component("detail", {
    computed: {
       api_url(){
          return `${API_URL}/${API_LOCATIONS[this.kind]}`
+      },
+      is_px(){
+         return this.kind === "features"? "px":"sb"
       }
    },
 

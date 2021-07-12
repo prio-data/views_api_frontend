@@ -12,6 +12,11 @@ Vue.component("card",{
                   <td>ID</td>
                   <td class="id">{{id}}</td>
                </tr>
+               <tr>
+                  <td>URL</td>
+                  <td v-html="urls" class="urls">
+                  </td>
+               </tr>
             </table>
          </div>
          <div class="card-content">
@@ -19,7 +24,15 @@ Vue.component("card",{
          </div>
       </div>
    `,
-   props: ["id","name","content"]
+   computed: {
+      urls(){
+         return `
+            <a href="${this.url_base + "/"+ this.loa + "/" + this.id}">Data</a>
+         `
+      }
+   },
+
+   props: ["id","name","content","url_base","loa"]
 })
 
 Vue.component("card-list",{
@@ -30,7 +43,9 @@ Vue.component("card-list",{
             :name="c.name"
             :id="c.id"
             :content="c.description"
+            :url_base="url_base"
             :key="c.id"
+            :loa="loa"
             >
          </card>
       </div>
@@ -38,6 +53,12 @@ Vue.component("card-list",{
    props: {
       carddata: {
          default: ()=>[]
-      }
+      },
+      url_base : {
+         default: "http://0.0.0.0"
+      },
+      loa: {
+         default: "sb"
+      },
    },
 })

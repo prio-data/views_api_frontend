@@ -75,7 +75,6 @@ h1 {
 }
 
 .card .nameplate td {
-   white-space: pre-wrap;
    word-break: break-word;
    text-align: left;
    vertical-align: top;
@@ -86,6 +85,10 @@ h1 {
 
 .card .nameplate td.id {
    font-family: monospace;
+}
+
+.card .nameplate td a {
+   display: inline-block;
 }
 
 .card .card-content {
