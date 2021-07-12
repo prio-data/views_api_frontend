@@ -1,4 +1,105 @@
+html, body {
+   padding: 0;
+   margin: 0;
+}
 
 body {
-   background: green;
+   font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: subpixel-antialiased;
+   font-weight: 400;
+}
+
+h1 {
+   font-weight: 900;
+   font-size: 50px;
+}
+
+.page {
+   width: 800px;
+   height: 100vh;
+   display: grid;
+   grid-template-rows: 100px 1fr 100px;
+}
+
+.content {
+   overflow-y: auto;
+}
+
+#container {
+   display: grid;
+   place-items: center;
+}
+
+.header img,h1{
+   display: inline-block;
+   line-height: 100px;
+   margin: 0;
+   margin-right: 20px;
+   padding: 0;
+}
+.header img{
+   height: 40%;
+}
+
+.navbar * {
+   height: 60px;
+   margin: 0;
+   margin-right: 10px;
+   padding: 0;
+   display: inline-block;
+   vertical-align: center;
+}
+
+.navbar button {
+   font-size: 20px;
+   font-weight: 900;
+   padding: 0 50px;
+}
+
+.card {
+   display: grid;
+   grid-template-columns: 400px 2fr; 
+}
+.card .nameplate {
+}
+
+.card .nameplate table {
+   border-collapse: collapse;
+   width: 100%;
+   background: #ddd;
+}
+
+.card .nameplate td:first-child {
+   width: 50px;
+   font-weight: 900;
+}
+
+.card .nameplate td {
+   white-space: pre-wrap;
+   word-break: break-word;
+   text-align: left;
+   vertical-align: top;
+   border-bottom: 1px solid #aaa;
+   padding: 5px;
+   margin: 0;
+}
+
+.card .nameplate td.id {
+   font-family: monospace;
+}
+
+.card .card-content {
+   border-left: 1px solid #ccc;
+   margin: 10px 0;
+   padding: 0 40px 0 10px;
+}
+
+.card div {
+   padding: 10px;
+}
+
+.cardlist .card {
+   background: #f0f0f0;
+   margin-bottom: 10px;
+
 }
