@@ -21,7 +21,7 @@ const vue = new Vue(
 
       data(){
          return {
-            selection: "models" 
+            selection: undefined 
          }
       },
 

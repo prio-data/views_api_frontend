@@ -2,7 +2,7 @@
 Vue.component("detail", {
    template: `
       <div class="content">
-         <h2>{{kind}}</h2>
+         <h2>{{title}}</h2>
          <div class="navbar">
             <button v-on:click="back">Back</button>
          </div>
@@ -34,6 +34,9 @@ Vue.component("detail", {
       },
       is_px(){
          return this.kind === "features"? "px":"sb"
+      },
+      title(){
+         return capitalize(this.kind)
       }
    },
 
