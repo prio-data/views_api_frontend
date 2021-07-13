@@ -1,1 +1,96 @@
-{"cm":[{"id":"cm_sb_main_escwa","name":"Main country-level ensemble, presented in the report for ESCWA","description":"The forecasting model ensemble used to produce the monthly ViEWS forecasts at the country-month level of analysis. Informed by all constituent models (sub-models) currently trained to predict conflict at the country-month level of analysis."},{"id":"cm_sb_cflong_global_calibrated","name":"The UCDP conflict history model","description":"Features capturing different aspects of conflict history per country, as defined and sourced from the UCDP, including time since the last fatal event, which type of violence occurred, and which fatality thresholds were reached (at least 1, 25, 100, or 500 deaths)."},{"id":"cm_sb_escwa_onset_global_calibrated","name":"The onset model","description":"A model trained to predict onset of conflict, as recorded by the UCDP. Onset is defined as the first month that a country reaches or exceeds 25 battle-related deaths (BRDs) over a rolling 24-month window. The model captures all features informing the country-level models."},{"id":"cm_sb_vdem_global_calibrated","name":"The political institutions model","description":"A political instutions model informed by the Varieties of Democracy (V-Dem) dataset, which describes the political institutions of a country. Key features include physical integrity as a proxy for freedom from political killings and torture by the government, freedom of domestic movement, and indicators for rule of law and access to justice."},{"id":"cm_sb_wdi_global_calibrated","name":"The World Development Indicators (WDI) model","description":"A development model broadly capturing the level of development by country, including the quality of infrastructure, economic growth, national debt, education, unemployment, gender equality, health care and provision, agricultural dependence, migration flows, and country size. Sourced from the World Bank's World Development Indicators."},{"id":"cm_sb_escwa_global_calibrated","name":"The all-encompassing global model","description":"A global model informed by all features that are fed into the country-level models, capturing interactions and non-linearities between the different predictors."},{"id":"cm_sb_aquastat_global_calibrated","name":"The water management model","description":"A water management model informed by a set of country-level water resource indicators from FAO Aquastat (disaggregated water conditions are captured by sub-national models). The selected indicators are based on current hydro-conflict literature and SDG reporting on water scarcity measures. These include total internal renewable water resources (IRWR), total renewable water resources (TRWR), groundwater flowing to other countries which is not covered by bilateral or multilateral agreements, total dam storage capacity per capita, and all indicators included in FAO's monitoring of SGD 6.4 (reducing water scarcity). FAO Aquastat is available for 5-year intervals, why missing values have been imputed."}],"pgm":[{"id":"pgm_sb_main_escwa","name":"The sub-national-level ensemble","description":"The forecasting model ensemble used to produce the monthly ViEWS forecasts at the PRIO-GRID-month level of analysis. Informed by all constituent models (sub-models) currently trained to predict conflict at the PRIO-GRID-month level of analysis."},{"id":"hist_legacy","name":"The conflict history model","description":"A model tracing the conflict history of each geographic grid-cell and its adjacent locations, as incidences of conflict are more likely in locations that have experienced conflict in the past."},{"id":"pgm_sb_sptime_ame_calibrated","name":"The space-time model","description":"A conflict history model capturing both time and space proximity to conflict."},{"id":"onset24_1_all","name":"The 1 BRD onset model","description":"A model trained to predict onset of conflict with at least one battle-related death (BRD) in a given geographic location. Onset is defined as the first time a specific grid cell, or its neighbours, reaches the 1-BRD threshold over a 24-month sliding window. The model uses the feature set from the all_themes model, coupled with fatality estimates and conflict event counts related to the spacetime model, and a subset of data from the Standardized Precipitation Evapotranspiration Index (SPEI), a water balance index computed from both precipitation and temperature data."},{"id":"pgm_sb_combined_ame_calibrated","name":"The all themes model","description":"A broad model informed by outcome-specific features from all sub-national models, capturing interactions between different features."},{"id":"pgm_sb_crosslevel_ame_calibrated","name":"The cross-level model","description":"A cross-level model that allows the country- and sub-national levels of analysis to inform one another."},{"id":"pgm_sb_crop_drought_ame_calibrated","name":"The drought and vulnerability model","description":"An agro-climatic model capturing the frequency and intensity of droughts and their impact on the main crops harvests. Key features include the SPEI index of water availability as a measure of drought, information from the MIRCA calendar on the growing season of the main crops, Mapspam data on crop harvest and yield, and variables capturing local vulnerability to climate-related impacts, informed by, e.g., measures of conflict legacy, socio-economic and political conditions and the ground, agricultural dependence, and adaptive capacity in agriculture."},{"id":"pgm_sb_vulnerability_ame_calibrated","name":"The drought and vulnerability model","description":"An agro-climatic model capturing the frequency and intensity of droughts and their impact on the main crops harvests. Key features include the SPEI index of water availability as a measure of drought, information from the MIRCA calendar on the growing season of the main crops, Mapspam data on crop harvest and yield, and variables capturing local vulnerability to climate-related impacts, informed by, e.g., measures of conflict legacy, socio-economic and political conditions and the ground, agricultural dependence, and adaptive capacity in agriculture."},{"id":"pgm_sb_naturalsocial_ame_calibrated","name":"The natural and social geography model","description":"A model informed by a suite of natural and social geography indicators, including the spatial distance to exploitable resources such as diamonds and petroleum deposits; the distance to the capital, the nearest urban center, and the national border; the main type of land in a given area (cultivated areas, barren, forest, mountains, savanna, shrub, pasture, or urban areas); population density, and development variables such as local GDP, infant mortality rate, and the share of excluded ethnic groups in each location."}]}
+{
+  "cm": [
+    {
+      "id": "cm_sb_main_escwa",
+      "name": "Main country-level ensemble, presented in the report for ESCWA",
+      "description": "The forecasting model ensemble used to produce the monthly ViEWS forecasts at the country-month level of analysis. Informed by all constituent models (sub-models) currently trained to predict conflict at the country-month level of analysis."
+    },
+    {
+      "id": "cm_sb_cflong_global_calibrated",
+      "name": "The UCDP conflict history model",
+      "description": "Features capturing different aspects of conflict history per country, as defined and sourced from the UCDP, including time since the last fatal event, which type of violence occurred, and which fatality thresholds were reached (at least 1, 25, 100, or 500 deaths)."
+    },
+    {
+      "id": "cm_sb_escwa_onset_global_calibrated",
+      "name": "The onset model",
+      "description": "A model trained to predict onset of conflict, as recorded by the UCDP. Onset is defined as the first month that a country reaches or exceeds 25 battle-related deaths (BRDs) after a period of at least 24 months with less than 25 deaths per month. Informed by the same feature set as the multi-feature global model, containing key features from all country-level models."
+    },
+    {
+      "id": "cm_sb_vdem_global_calibrated",
+      "name": "The political institutions model",
+      "description": "A political instutions model informed by the Varieties of Democracy (V-Dem) dataset, which describes the political institutions of a country. Key features include physical integrity as a proxy for freedom from political killings and torture by the government, freedom of domestic movement, and indicators for rule of law and access to justice."
+    },
+    {
+      "id": "cm_sb_wdi_global_calibrated",
+      "name": "The World Development Indicators (WDI) model",
+      "description": "A development model broadly capturing the level of development by country, including the quality of infrastructure, economic growth, national debt, education, unemployment, gender equality, health care and provision, agricultural dependence, migration flows, and country size. Sourced from the World Bank's World Development Indicators."
+    },
+    {
+      "id": "cm_sb_escwa_global_calibrated",
+      "name": "The multi-feature global model",
+      "description": "A global model informed by the key features from all country-level models, capturing interactions and non-linearities between the different predictors."
+    },
+    {
+      "id": "cm_sb_aquastat_global_calibrated",
+      "name": "The FAO AQUASTAT water management model",
+      "description": "A water management model informed by a set of country-level water resource indicators from FAO AQUASTAT (disaggregated water conditions are captured by sub-national models). The selected indicators are based on current hydro-conflict literature and SDG reporting on water scarcity measures. These include total internal renewable water resources (IRWR), total renewable water resources (TRWR), groundwater flowing to other countries which is not covered by bilateral or multilateral agreements, total dam storage capacity per capita, and all indicators included in FAO's monitoring of SGD 6.4 (reducing water scarcity). FAO AQUASTAT is available for 5-year intervals, why missing values have been imputed."
+    },
+    {
+      "id": "cm_sb_food_global_calibrated",
+      "name": "The FAO and WFP food prices model",
+      "description": "A food prices model informed by country-level monthly market price averages for wheat, sugar, milk and meat commodities in local currencies in the Arab region, as well as prices adjusted to current USD. The data are sourced from the UN Food and Agriculture Organisation (FAO) and the World Food Program's (WFP) Food Price Forecasting and Alert for Price Spikes tool."
+    },
+    {
+      "id": "cm_sb_faostat_global_calibrated",
+      "name": "The FAOSTAT food insecurity model",
+      "description": "A food insecurity model informed by all FAOSTAT indices on consumer prices, food price inflation, and food insecurity indicators, transformed to the country-month level of analysis used in ViEWS, with imputation of missing data."
+    },
+    {
+      "id": "cm_sb_imfweo_global_calibrated",
+      "name": "The IMF growth forecasts model",
+      "description": "A growth forecasts model informed by the IMF World Economic Outlook (WEO) growth forecasts, transformed to the country-month level of analysis used by the ViEWS system. The WEO data are published twice per year (in April and October) with values for each metric and country by year – retrospective data for the previous year, and forecasts for the current and next two years."
+    }
+  ],
+  "pgm": [
+    {
+      "id": "pgm_sb_main_escwa",
+      "name": "The sub-national-level ensemble",
+      "description": "The forecasting model ensemble used to produce the monthly ViEWS forecasts at the PRIO-GRID-month level of analysis. Informed by all constituent models (sub-models) currently trained to predict conflict at the PRIO-GRID-month level of analysis."
+    },
+    {
+      "id": "pgm_sb_sptime_ame_calibrated",
+      "name": "The space-time model",
+      "description": "A conflict history model capturing both time and space proximity to past conflict, using conflict data sourced from UCDP."
+    },
+    {
+      "id": "pgm_sb_naturalsocial_ame_calibrated",
+      "name": "The natural and social geography model",
+      "description": "A model informed by a suite of natural and social geography indicators, including the spatial distance to exploitable resources such as diamonds and petroleum deposits; the distance to the capital, the nearest urban center, and the national border; the main type of land in a given area (cultivated areas, barren, forest, mountains, savanna, shrub, pasture, or urban areas); population density, and development variables such as local GDP, infant mortality rate, and the share of excluded ethnic groups in each location."
+    },
+    {
+      "id": "pgm_sb_crop_drought_ame_calibrated",
+      "name": "The agro-climatic model",
+      "description": "An agro-climatic model informed by drought and agricultural features, most importantly the SPEI index of water availability as a measure of drought, information from the MIRCA calendar on the growing season of the main crops, and Mapspam data on crop harvest and yield, thus capturing not only the frequency and intensity of droughts but also their impact on the main crops harvests. Excludes information on vulnerability."
+    },
+    {
+      "id": "pgm_sb_vulnerability_ame",
+      "name": "The vulnerability model",
+      "description": "A vulnerability model capturing populations' vulnerability to climate shocks. It is informed by the share of people employed in agriculture (agricultural dependence), the number of excluded groups as defined in the GeoEPR data, and the average nighttime light emissions as a proxy for economic activity, excluding the climatic indicators instead captured by the agro-climatic model." 
+    },
+    {
+      "id": "pgm_sb_crop_drought_vulnerability_ame",
+      "name": "The combined agro-climatic vulnerability model",
+      "description": "A model informed by the feature sets from both the agro-climatic model and the vulnerability model. Key features thus include the SPEI index of water availability as a measure of drought, information from the MIRCA calendar on the growing season of the main crops, Mapspam data on crop harvest and yield, and variables capturing local vulnerability to climate-related impacts, such as socio-economic and political conditions and the ground, agricultural dependence, and adaptive capacity in agriculture."
+    },
+    {
+      "id": "pgm_sb_combined_ame_calibrated",
+      "name": "The combined agro-climatic, natural and social geography model",
+      "description": "A model combining the feature sets from the natural and social geography model with those from the agro-climatic model. Informed also by an extensive set of conflict history features, this model places less emphasis on drought than the other models that incorporate such variables. Key variables for this combined model are instead population size and terrain features, particularly the proportions of the given areas that are culvatived, and the distance to diamond deposits. "
+    },
+    {
+      "id": "pgm_sb_crosslevel_ame_calibrated",
+      "name": "The cross-level model",
+      "description": "A cross-level model that combines feature sets from the broad country-level model 'all_global' with the broad sub-national model 'allthemes' from the standard ViEWS set-up, allowing the two levels of analysis to inform each other."
+    }
+  ]
+}
