@@ -26,13 +26,13 @@ const MOCK_DATA = {
    },
 }
 
-const URLS = {
-   "features": "data/features_codebook.json",
-   "models": "data/models_codebook.json",
+const API_URL       = "https://api.viewsforecasting.org"
+const API_LOCATIONS = {
+   features: "escwa_data_2021_10_01",
+   models:   "escwa_2021_05_01"
 }
 
-const API_URL = "http://54.75.57.44:8000"
-const API_LOCATIONS = {
-   features: "escwa_features_2021_05_01",
-   models: "escwa_2021_05_01"
+const URLS = {
+   "features": `${API_URL}/${API_LOCATIONS.features}`,
+   "models":   `${API_URL}/${API_LOCATIONS.models}`,
 }
