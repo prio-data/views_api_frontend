@@ -33,6 +33,6 @@ const API_LOCATIONS = {
 }
 
 const URLS = {
-   "features": `${API_URL}/${API_LOCATIONS.features}`,
-   "models":   `${API_URL}/${API_LOCATIONS.models}`,
+   "features": `${API_URL}/${API_LOCATIONS.features}/codebook`,
+   "models":   `${API_URL}/${API_LOCATIONS.models}/codebook`,
 }
